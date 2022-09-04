@@ -1,0 +1,74 @@
+body{
+    background-image:url(img/background.jpg);
+}
+
+
+.hexadiagram{
+    /*display: block;*/
+    margin: auto;
+    text-align: center;
+    vertical-align: center;
+
+}
+
+.diagram{
+    background-color: transparent;
+    border: white 3px solid;
+    text-align: center;
+    vertical-align: center;
+    border-radius: 7px;
+    padding: 30px 0px 0px 0px;
+    margin: 20px 0px 10px 0px;
+    height: 150px;   
+    width: 150px;
+    font-family: 'Roboto Bold', sans-serif, '300';
+    -webkit-animation: breathing 3s ease-out infinite normal;
+    animation: breathing 3s ease-out infinite normal;
+    transition: all 1s linear;
+    /*box-shadow: 5px 7px 10px 0 rgba(0, 0, 0, 0.16);*/
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    padding-bottom:20px;
+}
+
+@keyframes fondo{
+    0%   {background-color:rgba(84, 119, 217, 0.5);}
+    20%  {background-color:rgba(112, 50, 236, 0.5);}
+    40%  {background-color:rgba(190, 33, 242, 0.5);} 
+    60%  {background-color:rgba(255, 14, 203, 0.5);}
+    80%  {background-color:rgba(247, 201, 65,  0.5);}
+    100% {background-color:rgba(65, 247, 126, 0.5);}
+}
+
+@keyframes contornos{
+    20%  {border-color:#5478d9;}
+    40%  {border-color:#7133ec;}
+    60%  {border-color:#be21f2de;} 
+    80%  {border-color:#ff0ecb;}
+    10%  {border-color:#f7c941;}
+    0%   {border-color:#41f77e;}
+}
+
+@keyframes entrada {
+    from{
+        opacity: 0;
+        left: 20px;
+    }
+    to{
+        opacity: 1;
+        left: 0px;
+    }
+}
+
+@keyframes salida {
+    from{
+        opacity: 1;
+        left: 0px;
+    }
+    to{
+        opacity: 0;
+        left: 20px;
+    }
+}

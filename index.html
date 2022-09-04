@@ -1,0 +1,276 @@
+<!--Proyecto Tecnologías para el Desarrollo de Aplicaciones Web
+    Integrantes:  Castillo Guzman Luis Eduardo
+                  Espinosa Cruz Emilio Jared
+
+    Grupo: 4BM1
+-->
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Proyecto Hexagramas</title>
+        <link rel="icon" href="img\hexagram.jpg">
+        <!-- Scripts-->
+        <script type="text/javascript" src="js\main.js" defer></script>
+        <script type="text/javascript" src="js\obtenerHexagrama.js" defer></script>
+        <script type="text/javascript" src="js\cuadro.js" defer></script>
+        <!-- Css-->
+        <link href="css\style-desing.css" rel="stylesheet" type="text/css">
+        <link href="css\styles.css" rel="stylesheet" type="text/css">
+    </head>
+    <body style="background-image: url('img/background.jpg');  background-size: 100% 100%;">
+        <div class="grid">
+            <div class="a">
+                <div class="text">
+                    <span><center><b>Hexagramas de I Ching</b></center><br></span>
+                    El I Ching es un poderoso libro chino oracular que te ayudará a tomar decisiones importantes. Conocido como <span><b>Libro de las Mutaciones</b></span>
+                    que procede de las corrientes taoístas y confucionista; asentando en un solo texto durante la dinastía Zhou.
+                    <br><br><span>Se condierar que los hexagramas de I Ching interpreta la situación que el que lo consulta planeta; para arrojar
+                        un hexagrama que contiene, en un lenguaje cifrafo, un modo de resolver el futuro si se elige correctamente.
+                    
+                </div>
+                <div class="inputs">
+                    <input type="number" min="2" max="3" step="1" id="H1" maxlength="1" class="number-input" placeholder="Introduzca un número que sea 2 o 3"/>
+                    <input type="number" min="2" max="3" step="1" id="H2" maxlength="1" class="number-input" placeholder="Introduzca un número que sea 2 o 3"/>
+                    <input type="number" min="2" max="3" step="1" id="H3" maxlength="1"class="number-input" placeholder="Introduzca un número que sea 2 o 3"/>
+                </div>
+                <div class="buttons">
+                    <input type="button" value="Agregar Línea" class="action-p" onclick="agregarLínea()">
+                    <input type="button" value="Generar Línea" class="action-p" onclick="generarLineaAleatoria()">
+                </div>
+                <div class="buttons">
+                    <input type="button" value="Eliminar Línea" class="action-n" onclick="borrarLínea()">
+                    <input type="button" value="Borrar Hexagrama" class="action-n" onclick="borrarHexagrama()">
+                </div>
+
+                <div class="contenedor_descripcion"> 
+                    <!--Informacion sobre el hexagrama que se selleciones-->
+                    <div class="hexagrama-descripcion" id="hexagrama-descripcion-tabla">
+                        <b id="hexagrama-descripcion-tabla-nombre-hover"></b><br>
+                        <span id="hexagrama-descripcion-tabla-hover"></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="b">
+                <div class="hex">
+                    <!--Hexagrama Principal-->
+                    <div class="hexadiagram" id="diagram1">
+                        <div class="hexa-title" id="diagram1-title"></div>
+                        <div class="diagram" id="dgm1">
+                            
+                        </div>
+                    </div>
+                    <!--Hexagrama mutación 1-->
+                    <div class="hexadiagram" id="diagram2">
+                        <div class="hexa-title" id="diagram2-title">Hexagram</div>
+                        <div class="diagram" id="dgm2">
+                            
+                        </div>
+                    </div>
+
+                    <!--Hexagrama mutación 2-->
+                    <div class="hexadiagram" id="diagram3">
+                        <div class="hexa-title" id="diagram3-title"></div>
+                        <div class="diagram" id="dgm3"></div>
+                    
+                    </div>
+
+                </div>
+                <!--Descripciones de los hexagramas-->
+                <div class="contenedor-descripcion">
+                        
+                    <div class="hexagrama-descripcion" id="hexagrama-descripcion-resultado-1">
+                        <b id="hexagrama-descripcion-resultado-nombre-1"></b><br>
+                        <span id="hexagrama-descripcion-result-1"></span>
+                    </div>
+
+                    <div class="hexagrama-descripcion" id="hexagrama-descripcion-resultado-3">
+                        <b id="hexagrama-descripcion-resultado-nombre-3"></b><br>
+                        <span id="hexagrama-descripcion-result-3"></span>
+                    </div>
+                
+                    <div class="hexagrama-descripcion" id="hexagrama-descripcion-resultado-2">
+                        <b id="hexagrama-descripcion-resultado-nombre-2"></b><br>
+                        <span id="hexagrama-descripcion-result-2"></span>
+                    </div>
+                
+                </div>
+
+            </div>
+
+
+            <div class="c">
+                 <article id="descripcion-hover">
+                    <table>
+                        <tr>
+                            <td class="td-header esquina">
+                                <div>
+                                <p>Superior</p>
+                                <p>Inferior</p>
+                                </div>
+                            </td>
+                            <td class="td-header">
+                                <img src="img/Ch'ien.jpg"><br>
+                                Ch'ien
+                            </td>
+                            <td class="td-header">
+                                <img src="img/Chen.jpg"><br>
+                                Chen
+                            </td>
+                            <td class="td-header"> 
+                                <img src="img/K'an.jpg"><br>
+                                K'an
+                            </td>
+                            <td class="td-header">
+                                <img src="img/Ken.jpg"><br>
+                                Ken
+                            </td>
+                            <td class="td-header">
+                                <img src="img/K'un.jpg"><br>
+                                K'un
+                            </td>
+                            <td class="td-header">
+                                <img src="img/Sun.jpg"><br>
+                                Sun
+                            </td>
+                            <td class="td-header">
+                                <img src="img/Li.jpg"><br>
+                                Li
+                            </td>
+                            <td class="td-header">
+                                <img src="img/Tui.jpg"><br>
+                                Tui
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-header">
+                                <img src="img/Ch'ien.jpg"><br>
+                                Ch'ien
+                            </td>
+                            <td id="1">1</td>
+                            <td id="34">34</td>
+                            <td id="5">5</td>
+                            <td id="26">26</td>
+                            <td id="11">11</td>
+                            <td id="9">9</td>
+                            <td id="14">14</td>
+                            <td id="43">43</td>
+                        </tr>
+                        <tr>
+                            <td class="td-header">
+                                <img src="img/Chen.jpg"><br>
+                                Chen
+                            </td>
+                            <td id="25">25</td>
+                            <td id="51">51</td>
+                            <td id="3">3</td>
+                            <td id="27">27</td>
+                            <td id="24">24</td>
+                            <td id="42">42</td>
+                            <td id="21">21</td>
+                            <td id="17">17</td>
+                        </tr>
+                        <tr>
+                            <td class="td-header">
+                                <img src="img/K'an.jpg"><br>
+                                K'an
+                            </td>
+                            <td id="6">6</td>
+                            <td id="40">40</td>
+                            <td id="29">29</td>
+                            <td id="4">4</td>
+                            <td id="7">7</td>
+                            <td id="59">59</td>
+                            <td id="64">64</td>
+                            <td id="47">47</td>
+                        </tr>
+                        <tr>
+                            <td class="td-header">
+                                <img src="img/Ken.jpg"><br>
+                                Ken
+                            </td>
+                            <td id="33">33</td>
+                            <td id="62">62</td>
+                            <td id="39">39</td>
+                            <td id="52">52</td>
+                            <td id="15">15</td>
+                            <td id="53">53</td>
+                            <td id="56">56</td>
+                            <td id="31">31</td>
+                        </tr>
+                        <tr>
+                            <td class="td-header">
+                                <img src="img/K'un.jpg"><br>
+                                K'un
+                            </td>
+                            <td id="12">12</td>
+                            <td id="16">16</td>
+                            <td id="8">8</td>
+                            <td id="23">23</td>
+                            <td id="2">2</td>
+                            <td id="20">20</td>
+                            <td id="35">35</td>
+                            <td id="45">45</td>
+                        </tr>
+                        <tr>
+                            <td class="td-header">
+                                <img src="img/Sun.jpg"><br>
+                                Sun
+                            </td>
+                            <td id="44">44</td>
+                            <td id="32">32</td>
+                            <td id="48">48</td>
+                            <td id="18">18</td>
+                            <td id="46">46</td>
+                            <td id="57">57</td>
+                            <td id="50">50</td>
+                            <td id="28">28</td>
+                        </tr>
+                        <tr>
+                            <td class="td-header">
+                                <img src="img/Li.jpg"><br>
+                                Li
+                            </td>
+                            <td id="13">13</td>
+                            <td id="55">55</td>
+                            <td id="63">63</td>
+                            <td id="22">22</td>
+                            <td id="36">36</td>
+                            <td id="37">37</td>
+                            <td id="30">30</td>
+                            <td id="49">49</td>
+                        </tr>
+                        <tr>
+                            <td class="td-header">
+                                <img src="img/Tui.jpg"><br>
+                                Tui
+                            </td>
+                            <td id="10">10</td>
+                            <td id="54">54</td>
+                            <td id="60">60</td>
+                            <td id="41">41</td>
+                            <td id="19">19</td>
+                            <td id="61">61</td>
+                            <td id="38">38</td>
+                            <td id="58">58</td>
+                        </tr>
+                    </table>
+            </article>
+            </div>
+            
+            <div class="d" >
+                    
+            </div>
+        </div>
+
+        <!-- Aquí van los scripts-->
+
+
+    </body>
+</html>
